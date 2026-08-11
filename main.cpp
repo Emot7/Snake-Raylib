@@ -210,7 +210,10 @@ int main()
     {
         BeginDrawing();
 
-        if(eventTriggered(0.2))
+        double speed = 0.2 - 0.02 * game.score;
+        if(speed < 0.05) speed = 0.05;
+
+        if(eventTriggered(speed))
         {
             game.Update();
         }
